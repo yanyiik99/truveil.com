@@ -1,34 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// Import react-router-dom
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import * as Pages from './pages'; 
+ 
+// Import Redux
+import createSagaMiddleware from "@redux-saga/core";
+import { Provider } from "react-redux";
+import { applyMiddleware, createStore } from "redux";
+import rootReducer from './bootstraps/rootReducer';
+import rootSaga from './bootstraps/sagas';
+import { composeWithDevTools } from 'redux-devtools-extension';
+
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const sagaMiddleware = createSagaMiddleware();
+  const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(sagaMiddleware)));
+  sagaMiddleware.run(rootSaga)
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Truveil.com</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+    <Provider store={store}>
+      <Router>
+        <Routes>
+            <Route exact path="/" element={<Pages.Homepages/>} />
+        </Routes>
+      </Router>
+    </Provider>
   )
 }
 
