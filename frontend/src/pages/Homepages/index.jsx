@@ -1,5 +1,6 @@
-import * as Homepage from '../../components/Homepage'
-import * as Layouts from '../../layouts'
+import * as Homepage from '../../components/Homepage';
+import * as Layouts from '../../layouts';
+import * as Component from '../../components';
 
 function Homepages() {
 
@@ -8,8 +9,12 @@ function Homepages() {
       <Layouts.Navbar />
       <Homepage.Banner />
       <Homepage.FormFilter />
+      {/* Year & Monthly */}
+      <Homepage.CategoryProduct />
+      <Homepage.CategoryProduct />
+
     </div>
   )
 }
 
-export default Homepages
+export default Homepages;

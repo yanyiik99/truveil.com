@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App'
 import './styles/global.css'
 import { ThemeProvider, createTheme } from '@mui/material'
+import { StyledEngineProvider } from '@mui/material'
 
 
 
@@ -25,9 +26,9 @@ const theme = createTheme({
 });
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <ThemeProvider theme={theme}>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>,
-  </ThemeProvider>
+  // <StyledEngineProvider  injectFirst>
+    <ThemeProvider theme={theme}>
+        <App />
+    </ThemeProvider>
+  // </StyledEngineProvider  >
 )

@@ -1,6 +1,8 @@
 // Import react-router-dom
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import * as Pages from './pages'; 
+import * as Admin from './admin'; 
+
  
 // Import Redux
 import createSagaMiddleware from "@redux-saga/core";
@@ -11,6 +13,7 @@ import rootSaga from './bootstraps/sagas';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 
+
 function App() {
 
   const sagaMiddleware = createSagaMiddleware();
@@ -19,11 +22,14 @@ function App() {
 
   return (
     <Provider store={store}>
-      <Router>
-        <Routes>
-            <Route exact path="/" element={<Pages.Homepages/>} />
-        </Routes>
-      </Router>
+        <Router>
+          <Routes>
+              <Route path="/" element={<Pages.Homepages/>} />
+              <Route path="/detailproperty/1" element={<Pages.Detailproperty/>} />
+              <Route path="/listproperty" element={<Pages.SearchProperty/>} />
+              <Route path="/dashboard" element={<Admin.Dashboard/>} />
+          </Routes>
+        </Router>
     </Provider>
   )
 }
