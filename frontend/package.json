@@ -18,11 +18,13 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
+    "react-id-swiper": "^4.0.0",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.10.0",
     "redux": "^4.2.1",
     "redux-devtools-extension": "^2.13.9",
-    "redux-saga": "^1.2.3"
+    "redux-saga": "^1.2.3",
+    "swiper": "^9.2.4"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",

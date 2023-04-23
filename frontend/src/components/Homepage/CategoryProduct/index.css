@@ -1,0 +1,19 @@
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+.swiper-slide.swiper-cat-prod {
+  width: 280px;
+  height: 850px;
+  background: #fff;
+
+}
+  
+  
+@media (min-width: 768px){
+  .swiper-slide.swiper-cat-prod {
+    width: 470px;
+    height: 850px;
+  }
+}

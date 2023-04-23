@@ -1,0 +1,62 @@
+#bg-detailproperty{
+    background-image: url('../../assets/img/bg-detailproperty.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+    background-position: center;
+}
+
+
+/* Start Swiper */
+.swiper-slide {
+    background-size: cover;
+    background-position: center;
+}
+  
+.mySwiper2 {
+    width: 100%;
+    height: 300px;
+}
+
+.mySwiper.swipe {
+    height: 200px;
+    box-sizing: border-box;
+    padding: 10px 0;
+}
+
+.mySwiper.swipe .swiper-slide.swiper-det-prop {
+    width: 25%;
+    height: 100%;
+    opacity: 0.4;
+}
+
+.mySwiper.swipe .swiper-slide-thumb-active {
+    opacity: 1;
+}
+
+.swiper-slide.swiper-det-prop img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* End Swiper */
+
+/* Start Common */
+.check-detail-property ul li {
+    background: url('../../assets/img/check-circle.png') no-repeat left 3px;
+    background-size: 20px;
+    padding-left: 35px;
+}
+/* End Common */
+
+
+
+
+@media screen and (min-width: 768px){
+    .mySwiper2 {
+        height: 600px;
+        width: 100%;
+    }
+    
+}
