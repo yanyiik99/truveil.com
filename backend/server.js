@@ -13,14 +13,14 @@ app.use(cors(corsOptions));
 // parse requests of content-type - application/json
 app.use(express.json());
 
-// parse requests of content-type - application/x-www-form-urlencoded
+// parse requests of content-typ - application/xe-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
 const db = require("./app/models");
 const Role = db.role;
 
 db.mongoose
-  .connect(`mongodb+srv://wirapratamaz:wiradenkayu1850@cluster0.ftvonfo.mongodb.net/db_backend`, {
+  .connect(`mongodb://0.0.0.0:27017/db_backend`, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
