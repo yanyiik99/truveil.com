@@ -27,7 +27,9 @@ function App() {
               <Route path="/" element={<Pages.Homepages/>} />
               <Route path="/detailproperty/1" element={<Pages.Detailproperty/>} />
               <Route path="/listproperty" element={<Pages.SearchProperty/>} />
-              <Route path="/dashboard" element={<Admin.Dashboard/>} />
+              <Route path="/admin/dashboard" element={<Admin.Dashboard/>} />
+              <Route path="/admin/listvilla" element={<Admin.ListVilla/>} />
+              <Route path="/admin/addvilla" element={<Admin.AddVilla/>} />
           </Routes>
         </Router>
     </Provider>

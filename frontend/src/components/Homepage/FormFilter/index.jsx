@@ -73,7 +73,7 @@ function FormFilter() {
     <div className="mt-44">
         <Container>
           <div className="border-4 border-[#4C748B] rounded-xl p-10">
-            <form action="GET">
+            <form method="POST">
               <h3 className="text-[#4C748B] font-semibold">Search Your Property</h3>
               <div>
                 <Grid container justifyContent="center" spacing={2}>

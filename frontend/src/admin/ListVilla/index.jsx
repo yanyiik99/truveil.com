@@ -1,14 +1,13 @@
 import * as admin from '../../admin';
 
-
-function Dashboard() {
+function ListVilla() {
   return (
     <div>
         <admin.Wrapper>
-          <h1>INI DASHBOARD</h1>
+            <h1>INI LIST VILLA</h1>
         </admin.Wrapper>
     </div>
   )
 }
 
-export default Dashboard;
+export default ListVilla
