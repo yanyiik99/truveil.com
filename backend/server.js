@@ -27,6 +27,7 @@ db.mongoose
   .then(() => {
     console.log("Successfully connect to MongoDB.");
     initial();
+    setupSwagger(); // Panggil fungsi setupSwagger setelah koneksi ke MongoDB berhasil
   })
   .catch(err => {
     console.error("Connection error", err);
@@ -84,3 +85,50 @@ function initial() {
     }
   });
 }
+
+function setupSwagger() {
+  const swaggerJsdoc = require('swagger-jsdoc');
+  const swaggerUi = require('swagger-ui-express');
+
+  const options = {
+    swaggerDefinition: {
+      openapi: '3.0.0',
+      info: {
+        title: 'Dokumentasi API Truveil.com',
+        version: '1.0.0',
+        description: 'Deskripsi API Backend',
+      },
+      components: {
+        schemas: {
+          Product: {
+            $ref: '#/components/schemas/Product',
+          },
+        },
+        securitySchemes: {
+          apiKeyAuth: {
+            type: 'apiKey',
+            in: 'header',
+            name: 'x-access-token',
+          },
+        },
+      },
+      security: [{
+        bearerAuth: [],
+      }],
+      servers: [
+        {
+          url: 'http://localhost:8080',
+          description: 'Development server',
+        },
+      ],
+    },
+    apis: ['./app/routes/*.js'],
+    basePath: '/',
+  };
+
+  const specs = swaggerJsdoc(options);
+
+  app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
+}
+
+
